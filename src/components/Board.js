@@ -10,8 +10,17 @@ const Board = (props) => {
 
         e.target.appendChild(card);
     }
+
+    const dragOver = e => {
+        e.preventDefault();
+    }
     return (
-        <div>
+        <div
+            id={props.id}
+            className={props.className}
+            onDrop={drop}
+            onDragOver={dragOver}
+        >
             { props.children }
         </div>
     )
